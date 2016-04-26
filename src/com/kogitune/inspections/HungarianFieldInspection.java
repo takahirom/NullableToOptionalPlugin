@@ -27,6 +27,10 @@ public class HungarianFieldInspection extends BaseJavaLocalInspectionTool {
 
             }
 
+            @Override
+            public void visitAnnotationParameterList(PsiAnnotationParameterList list) {
+                super.visitAnnotationParameterList(list);
+            }
         };
     }
 
