@@ -7,8 +7,8 @@ import com.intellij.psi.*;
 import com.kogitune.inspections.toolbar.ToggleHungarianEnable;
 import org.jetbrains.annotations.NotNull;
 
-public class HungarianFieldInspection extends BaseJavaLocalInspectionTool {
-    public HungarianFieldInspection() {
+public class NullableToOptionalInspection extends BaseJavaLocalInspectionTool {
+    public NullableToOptionalInspection() {
         super();
     }
 
@@ -30,6 +30,12 @@ public class HungarianFieldInspection extends BaseJavaLocalInspectionTool {
             @Override
             public void visitAnnotationParameterList(PsiAnnotationParameterList list) {
                 super.visitAnnotationParameterList(list);
+            }
+
+            @Override
+            public void visitMethodCallExpression(PsiMethodCallExpression expression) {
+                super.visitMethodCallExpression(expression);
+
             }
         };
     }
